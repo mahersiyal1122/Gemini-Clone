@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root{
+    animation: fadeIn 1.5s;
+}
+
+body{
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #131314;
+    /* overflow: hidden; */
+}
+.dark body{
+    color: black;
+    background-color: white;
+}
+
+@layer components{
+    .loader hr{
+        @apply rounded border-none bg-[#f6f7f8] bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] bg-[length:800px_50px] h-5 animate-[loader_0.6s_infinite_linear]
+    }
+}
+
+@layer utilities{
+    .heroHeading{
+        background: linear-gradient(74deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #131314 75%, #131314 100%);
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.heroSuggestionBox::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes loader {
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }  
+}
